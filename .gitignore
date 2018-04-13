@@ -60,3 +60,4 @@ gradlew
 gradlew.bat
 settings.gradle
 .idea/modules.xml
+.idea
