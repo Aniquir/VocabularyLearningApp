@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
 
     <Button
-        android:id="@+id/startButton"
+        android:id="@+id/start1NewWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -14,28 +15,28 @@
         android:layout_marginTop="100dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="START" />
+        android:text="NEW" />
 
     <Button
-        android:id="@+id/addWordButton"
+        android:id="@+id/start1RepeatWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/startButton"
+        android:layout_below="@+id/start1NewWords"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="ADD WORD" />
+        android:text="REPEAT" />
 
     <Button
-        android:id="@+id/dbButton"
+        android:id="@+id/start1KnownWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addWordButton"
+        android:layout_below="@+id/start1RepeatWords"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="DATABASE" />
+        android:text="KNOW" />
 
 </RelativeLayout>
