@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import example.com.vocabularylearningapp.R;
-import example.com.vocabularylearningapp.onClickListeners.OnClickListenerDbButton;
 import example.com.vocabularylearningapp.onClickListeners.OnClickListenerNewWordButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,13 +26,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
-
+//this needs implementation v
         Button buttonAddWord = findViewById(R.id.addWordButton);
         buttonAddWord.setOnClickListener(new OnClickListenerNewWordButton());
 
         Button buttonDb = findViewById(R.id.dbButton);
-        buttonDb.setOnClickListener(new OnClickListenerDbButton());
-
+        buttonDb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntenet2 = new Intent(MainActivity.this,
+                        ActivityAfterClickDbButton.class);
+                startActivity(myIntenet2);
+            }
+        });
 
     }
 

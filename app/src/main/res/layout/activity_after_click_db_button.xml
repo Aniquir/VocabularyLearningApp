@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ActivityAfterClickStartButton">
+    tools:context=".activities.ActivityAfterClickDbButton">
 
     <Button
-        android:id="@+id/start1NewWords"
+        android:id="@+id/dbNewWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -15,28 +15,28 @@
         android:layout_marginTop="100dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="NEW" />
+        android:text="DATABSE OF NEW WORDS" />
 
     <Button
-        android:id="@+id/start1RepeatWords"
+        android:id="@+id/dbRepeatWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/start1NewWords"
+        android:layout_below="@+id/dbNewWords"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="REPEAT" />
+        android:text="DATABASE OF REPEAT WORDS" />
 
     <Button
-        android:id="@+id/start1KnownWords"
+        android:id="@+id/dbKnownWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/start1RepeatWords"
+        android:layout_below="@+id/dbRepeatWords"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="KNOW" />
+        android:text="DATABASE OF KNOWS WORDS" />
 
 </RelativeLayout>
