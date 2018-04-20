@@ -1,4 +1,4 @@
-package example.com.vocabularylearningapp.Activities;
+package example.com.vocabularylearningapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
