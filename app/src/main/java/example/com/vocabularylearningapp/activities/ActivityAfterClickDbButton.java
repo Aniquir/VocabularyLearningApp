@@ -1,5 +1,9 @@
 package example.com.vocabularylearningapp.activities;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,7 +28,8 @@ public class ActivityAfterClickDbButton extends AppCompatActivity {
         newWordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//            whenDBIsEmpty(checkDB(NEW_WORD_DB, db));
+                //tu jest problem
+            whenDBIsEmpty(checkDB(NEW_WORD_DB, ActivityAfterClickDbButton.NEW_WORD_DB));
             }
         });
 
@@ -45,29 +50,25 @@ public class ActivityAfterClickDbButton extends AppCompatActivity {
         });
     }
 
-//    public boolean checkDB(String nameOfDatabase, SQLiteDatabase db){
-//
-//        boolean check = false;
-//
-//        @SuppressLint("Recycle")
-//        Cursor mCursor = db.rawQuery("SELECT * FROM " + nameOfDatabase, null);
-//
-//        if (mCursor.moveToFirst()) {
-//            check = true;
-//
-//        } else {
-//            check = false;
-//        }
-//        return check;
-//    }
-//
-//    public void whenDBIsEmpty(boolean b){
-//
-//        if (!b){
-//            Intent myIntent = new Intent(ActivityAfterClickDbButton.this,
-//                    AcitvityAfterClickSomeDatabaseWhenItIsEmpty.class);
-//            startActivity(myIntent);
-//        }
-//
-//    }
+    // i tu
+    public boolean checkDB(String nameOfDatabase, SQLiteDatabase db){
+
+        boolean checkRows;
+
+        @SuppressLint("Recycle")
+        Cursor mCursor = db.rawQuery("SELECT * FROM " + nameOfDatabase, null);
+
+        checkRows = mCursor.moveToFirst();
+        return checkRows;
+    }
+
+    public void whenDBIsEmpty(boolean b){
+
+        if (!b){
+            Intent myIntent = new Intent(ActivityAfterClickDbButton.this,
+                    AcitvityAfterClickSomeDatabaseWhenItIsEmpty.class);
+            startActivity(myIntent);
+        }
+
+    }
 }
