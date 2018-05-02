@@ -5,8 +5,6 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import java.util.List;
-
 import example.com.vocabularylearningapp.entity.ObjectWord;
 import example.com.vocabularylearningapp.entity.ObjectWordDAO;
 
@@ -27,29 +25,31 @@ public abstract class AppDatabases extends RoomDatabase{
     private static AppDatabases mInstanceRepeatWord;
     private static AppDatabases mInstanceKnownWord;
 
-    public static List<AppDatabases> getInstance(Context context){
-
-        List<AppDatabases> databases = null;
+    public static AppDatabases getInstanceNewWord(Context context){
 
         if(mInstanceNewWord == null){
             mInstanceNewWord = Room.databaseBuilder(context, AppDatabases.class, DATABASE_NEW_WORD_NAME)
                     .fallbackToDestructiveMigration()
                     .build();
         }
+        return mInstanceNewWord;
+    }
+    public static AppDatabases getInstanceRepeatWord(Context context){
+
         if(mInstanceRepeatWord == null){
             mInstanceRepeatWord = Room.databaseBuilder(context, AppDatabases.class, DATABASE_REPEAT_WORD_NAME)
                     .fallbackToDestructiveMigration()
                     .build();
         }
+        return mInstanceRepeatWord;
+    }
+    public static AppDatabases getInstanceKnownWord(Context context){
+
         if(mInstanceKnownWord == null){
             mInstanceKnownWord = Room.databaseBuilder(context, AppDatabases.class, DATABASE_KNOWN_WORD_NAME)
                     .fallbackToDestructiveMigration()
                     .build();
         }
-        databases.add(mInstanceNewWord);
-        databases.add(mInstanceRepeatWord);
-        databases.add(mInstanceKnownWord);
-
-        return databases;
+        return mInstanceKnownWord;
     }
 }
