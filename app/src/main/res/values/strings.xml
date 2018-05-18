@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">VocabularyLearningApp</string>
-    <string name="this_database_is_empty">THIS DATABASE\n IS EMPTY :(</string>
+    <string name="this_database_is_empty">THE DATABASE OF WORDS\n IS EMPTY :(</string>
 </resources>

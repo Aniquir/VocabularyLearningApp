@@ -20,7 +20,7 @@
             android:name=".activities.ActivityAfterClickStartButton"
             android:parentActivityName=".activities.MainActivity" />
         <activity android:name=".activities.ActivityAfterClickDbButton" />
-        <activity android:name=".activities.AcitvityAfterClickSomeDatabaseWhenItIsEmpty"></activity>
+        <activity android:name=".activities.AcitvityAfterClickDatabaseWhenItIsEmpty"></activity>
     </application>
 
 </manifest>

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.ActivityAfterClickDbButton">
 
     <Button
-        android:id="@+id/dbNewWords"
+        android:id="@+id/buttonDbNewWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -18,10 +17,10 @@
         android:text="DATABSE OF NEW WORDS" />
 
     <Button
-        android:id="@+id/dbRepeatWords"
+        android:id="@+id/buttonDbRepeatWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dbNewWords"
+        android:layout_below="@+id/buttonDbNewWords"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:width="250dp"
@@ -29,10 +28,10 @@
         android:text="DATABASE OF REPEAT WORDS" />
 
     <Button
-        android:id="@+id/dbKnownWords"
+        android:id="@+id/buttonDbKnownWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dbRepeatWords"
+        android:layout_below="@+id/buttonDbRepeatWords"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:width="250dp"
