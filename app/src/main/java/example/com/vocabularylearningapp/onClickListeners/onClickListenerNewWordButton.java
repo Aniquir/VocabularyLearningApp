@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import example.com.vocabularylearningapp.R;
+import example.com.vocabularylearningapp.database.TableControllerWord;
 import example.com.vocabularylearningapp.entity.ObjectWord;
 
 public class OnClickListenerNewWordButton implements View.OnClickListener{
@@ -40,20 +41,13 @@ public class OnClickListenerNewWordButton implements View.OnClickListener{
                                 objectWord.setFirstTranslation(wordFirstTranslation);
                                 objectWord.setSecondTranslation(wordSecondTranslation);
 
-
-                                boolean createSuccessful = false;
-                                //o tutaj trzeba dodac cos co dodaje do bazy danych
-
-
+                                boolean createSuccessful = new TableControllerWord(context).create(objectWord);
 
                                 if (createSuccessful){
                                     Toast.makeText(context, "The word will be saved.", Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(context, "The word has not been saved.", Toast.LENGTH_SHORT).show();
                                 }
-                                //to implementation later v
-//                                ((MainActivity) context).countRecords();
-//                                ((MainActivity) context).readRecords();
                             }
                         }).show();
     }

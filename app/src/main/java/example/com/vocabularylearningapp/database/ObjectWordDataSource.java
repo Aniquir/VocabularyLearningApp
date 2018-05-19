@@ -10,13 +10,14 @@ public class ObjectWordDataSource implements ObjectWordDAO {
     private ObjectWordDAO objectWordDAO;
     private static ObjectWordDataSource mInstanceDatabaseOfWords;
 
+
     public ObjectWordDataSource(ObjectWordDAO objectWordDAO) {
         this.objectWordDAO = objectWordDAO;
     }
 
-    public static ObjectWordDataSource getInstanceDatabaseOfWords(ObjectWordDAO objectWordDAO) {
+    public static ObjectWordDataSource getInstanceDatabaseOfWords(ObjectWordDAO objectWordDAO){
 
-        if (mInstanceDatabaseOfWords == null) {
+        if(mInstanceDatabaseOfWords == null){
             mInstanceDatabaseOfWords = new ObjectWordDataSource(objectWordDAO);
         }
         return mInstanceDatabaseOfWords;

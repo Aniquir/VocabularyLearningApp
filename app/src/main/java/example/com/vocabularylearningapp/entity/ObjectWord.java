@@ -18,7 +18,7 @@ public class ObjectWord {
     @ColumnInfo(name = "second_translation")
     String secondTranslation;
 
-    //membership means where the word belong, 0 - new, 1 - repeat, 2 - known word
+    //assignmentNumber means where the word belong, 0 - new, 1 - repeat, 2 - known word
 
     @ColumnInfo(name = "assignment_number")
     int assignmentNumber;
