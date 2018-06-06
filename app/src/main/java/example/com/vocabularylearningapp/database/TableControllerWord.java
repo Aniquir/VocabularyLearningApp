@@ -33,22 +33,22 @@ public class TableControllerWord extends AppDatabaseHandler{
         return createSuccessful;
     }
 
-    public int count(){
+    public int count(int numNeededToDisplayCorrectDb){
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        String sql = "SELECT * FROM words";
+        String sql = "SELECT * FROM words WHERE assignmentNumber LIKE " + numNeededToDisplayCorrectDb;
         int recordCount = db.rawQuery(sql, null).getCount();
         db.close();
 
         return recordCount;
     }
 
-    public List<ObjectWord> read(int i){
+    public List<ObjectWord> read(int numNeededToDisplayCorrectDb){
 
         List<ObjectWord> recordList = new ArrayList<>();
 
-        String sql = "SELECT * FROM words WHERE assignmentNumber LIKE " + i;
+        String sql = "SELECT * FROM words WHERE assignmentNumber LIKE " + numNeededToDisplayCorrectDb;
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(sql, null);
@@ -57,9 +57,9 @@ public class TableControllerWord extends AppDatabaseHandler{
             do {
 
                 int id = Integer.parseInt(cursor.getString(cursor.getColumnIndex("id")));
-                String firstTranslation = cursor.getString(cursor.getColumnIndex("first_translation"));
-                String secondTranslation = cursor.getString(cursor.getColumnIndex("second_translation"));
-                int assignmentNumber = Integer.parseInt(cursor.getString(cursor.getColumnIndex("assignment_number")));
+                String firstTranslation = cursor.getString(cursor.getColumnIndex("firstTranslation"));
+                String secondTranslation = cursor.getString(cursor.getColumnIndex("secondTranslation"));
+                int assignmentNumber = Integer.parseInt(cursor.getString(cursor.getColumnIndex("assignmentNumber")));
 
                 ObjectWord objectWord = new ObjectWord();
                 objectWord.setId(id);
@@ -89,9 +89,9 @@ public class TableControllerWord extends AppDatabaseHandler{
 
         if(cursor.moveToFirst()){
             int id = Integer.parseInt(cursor.getString(cursor.getColumnIndex("id")));
-            String firstTranslation = cursor.getString(cursor.getColumnIndex("first_translation"));
-            String secondTranslation = cursor.getString(cursor.getColumnIndex("second_translation"));
-            int assignmentNumber = Integer.parseInt(cursor.getString(cursor.getColumnIndex("assignment_number")));
+            String firstTranslation = cursor.getString(cursor.getColumnIndex("firstTranslation"));
+            String secondTranslation = cursor.getString(cursor.getColumnIndex("secondTranslation"));
+            int assignmentNumber = Integer.parseInt(cursor.getString(cursor.getColumnIndex("assignmentNumber")));
 
             objectWord = new ObjectWord();
             objectWord.setId(id);
@@ -110,6 +110,9 @@ public class TableControllerWord extends AppDatabaseHandler{
 
         ContentValues values = new ContentValues();
 
+//        String firstTranslation = values.put("firstTranslation");
+//        String secondTranslation = cursor.getString(cursor.getColumnIndex("secondTranslation"));
+
         values.put("firstTranslation", objectWord.getFirstTranslation());
         values.put("secondTranslation", objectWord.getSecondTranslation());
 
@@ -127,7 +130,7 @@ public class TableControllerWord extends AppDatabaseHandler{
 
     public boolean delete(int id){
 
-        boolean deleteSuccessful = false;
+        boolean deleteSuccessful;
 
         SQLiteDatabase db = this.getWritableDatabase();
         deleteSuccessful = db.delete("words", "id ='" + id + "'", null) > 0;

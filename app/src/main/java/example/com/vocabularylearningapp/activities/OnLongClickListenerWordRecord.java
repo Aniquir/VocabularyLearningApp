@@ -29,8 +29,10 @@ class OnLongClickListenerWordRecord implements View.OnLongClickListener {
                     public void onClick(DialogInterface dialog, int item) {
 
                         dialog.dismiss();
+                        //update
                         if (item == 0) {
                             editRecord(Integer.parseInt(id));
+                        //delete
                         } else if (item == 1) {
 
                             boolean deleteSuccessful = new TableControllerWord(context).delete(Integer.parseInt(id));
@@ -40,8 +42,8 @@ class OnLongClickListenerWordRecord implements View.OnLongClickListener {
                             } else {
                                 Toast.makeText(context, "Unable to delete word record.", Toast.LENGTH_SHORT).show();
                             }
-                            ((ActivityDatabaseView) context).countRecords();
-                            ((ActivityDatabaseView) context).readRecords();
+                            ((ActivityDatabaseView) context).countRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
+                            ((ActivityDatabaseView) context).readRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
                         }
                     }
                 }).show();
@@ -83,8 +85,8 @@ class OnLongClickListenerWordRecord implements View.OnLongClickListener {
                         } else {
                             Toast.makeText(context, "Unable to update word record.", Toast.LENGTH_SHORT).show();
                         }
-                        ((ActivityDatabaseView) context).countRecords();
-                        ((ActivityDatabaseView) context).readRecords();
+                        ((ActivityDatabaseView) context).countRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
+                        ((ActivityDatabaseView) context).readRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
                     }
                 }).show();
     }

@@ -1,6 +1,5 @@
 package example.com.vocabularylearningapp.activities;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
@@ -19,27 +18,25 @@ public class ActivityDatabaseView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_view);
-        countRecords();
-        readRecords();
+        countRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
+        readRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
     }
 
-    @SuppressLint("SetTextI18n")
-    public void countRecords() {
 
-        int recordCount = new TableControllerWord(this).count();
+    public void countRecords(int numNeededToDisplayCorrectDb) {
+
+        int recordCount = new TableControllerWord(this).count(numNeededToDisplayCorrectDb);
         TextView textViewRecordCount = findViewById(R.id.counterOfWordsInDatabase);
         textViewRecordCount.setText(recordCount + " words found");
 
     }
 
-    public void readRecords() {
+    public void readRecords(int numNeededToDisplayCorrectDb) {
 
         LinearLayout linearLayoutRecords = findViewById(R.id.linearLayoutRecords);
         linearLayoutRecords.removeAllViews();
-        // ~
-        ObjectWord objectWord = new ObjectWord();
 
-        List<ObjectWord> words = new TableControllerWord(this).read(objectWord.getAssignmentNumber());
+        List<ObjectWord> words = new TableControllerWord(this).read(numNeededToDisplayCorrectDb);
 
         if (words.size() > 0) {
 
@@ -47,7 +44,7 @@ public class ActivityDatabaseView extends AppCompatActivity {
                 int id = word.getId();
                 String firstTranslation = word.getFirstTranslation();
                 String secondTranslation = word.getSecondTranslation();
-
+                //here change view of db
                 String textViewContents = firstTranslation + " - " + secondTranslation;
 
                 TextView textViewWordItem = new TextView(this);
