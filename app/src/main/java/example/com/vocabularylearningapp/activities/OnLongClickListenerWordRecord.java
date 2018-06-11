@@ -73,7 +73,7 @@ class OnLongClickListenerWordRecord implements View.OnLongClickListener {
                         dialog.cancel();
 
                         ObjectWord objectWord = new ObjectWord();
-                        objectWord.setId(id);
+                        objectWord.setId(wordId);
                         objectWord.setFirstTranslation(editTextWordFirstTranslation.getText().toString());
                         objectWord.setSecondTranslation(editTextWordSecondTranslation.getText().toString());
                         objectWord.setAssignmentNumber(objectWord.getAssignmentNumber());
