@@ -10,9 +10,12 @@ import java.util.List;
 import example.com.vocabularylearningapp.R;
 import example.com.vocabularylearningapp.database.TableControllerWord;
 import example.com.vocabularylearningapp.entity.ObjectWord;
+import example.com.vocabularylearningapp.onClickListeners.OnLongClickListenerWordRecord;
 
 
 public class ActivityDatabaseView extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

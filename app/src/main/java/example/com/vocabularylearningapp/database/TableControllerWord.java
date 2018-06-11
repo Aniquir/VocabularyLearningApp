@@ -110,9 +110,6 @@ public class TableControllerWord extends AppDatabaseHandler{
 
         ContentValues values = new ContentValues();
 
-//        String firstTranslation = values.put("firstTranslation");
-//        String secondTranslation = cursor.getString(cursor.getColumnIndex("secondTranslation"));
-
         values.put("firstTranslation", objectWord.getFirstTranslation());
         values.put("secondTranslation", objectWord.getSecondTranslation());
 

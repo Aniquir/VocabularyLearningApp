@@ -20,7 +20,9 @@
             android:name=".activities.ActivityAfterClickStartButton"
             android:parentActivityName=".activities.MainActivity" />
         <activity android:name=".activities.ActivityAfterClickDbButton" />
-        <activity android:name=".activities.ActivityDatabaseView"></activity>
+        <activity android:name=".activities.ActivityDatabaseView" />
+        <activity android:name=".activities.ActivityFirstTranslationWord" />
+        <activity android:name=".activities.ActivitySecondTranslationWord"></activity>
     </application>
 
 </manifest>

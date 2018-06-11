@@ -1,4 +1,4 @@
-package example.com.vocabularylearningapp.activities;
+package example.com.vocabularylearningapp.onClickListeners;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -9,10 +9,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import example.com.vocabularylearningapp.R;
+import example.com.vocabularylearningapp.activities.ActivityAfterClickDbButton;
+import example.com.vocabularylearningapp.activities.ActivityDatabaseView;
 import example.com.vocabularylearningapp.database.TableControllerWord;
 import example.com.vocabularylearningapp.entity.ObjectWord;
 
-class OnLongClickListenerWordRecord implements View.OnLongClickListener {
+public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
 
     Context context;
     String id;
