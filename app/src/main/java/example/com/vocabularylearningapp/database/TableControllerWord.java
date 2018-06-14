@@ -33,6 +33,21 @@ public class TableControllerWord extends AppDatabaseHandler{
         return createSuccessful;
     }
 
+    public boolean createWithThisSameId(ObjectWord objectWord){
+
+        ContentValues values = new ContentValues();
+
+        values.put("id", objectWord.getId());
+        values.put("firstTranslation", objectWord.getFirstTranslation());
+        values.put("secondTranslation", objectWord.getSecondTranslation());
+        values.put("assignmentNumber", objectWord.getAssignmentNumber());
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        boolean createSuccessful = db.insert("words", null, values) > 0;
+        db.close();
+
+        return createSuccessful;
+    }
     public int count(int numNeededToDisplayCorrectDb){
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -123,6 +138,19 @@ public class TableControllerWord extends AppDatabaseHandler{
         db.close();
 
         return updateSuccessful;
+    }
+    //transfer to other database(this same but with changed assingmentNumber)
+    public boolean updateToOtherDatabase(ObjectWord objectWord){
+
+        boolean updateToOtherDatabaseSuccessful = false;
+
+        boolean createSuccessful = createWithThisSameId(objectWord);
+        boolean deleteSuccessful = delete(objectWord.getId());
+
+        if (createSuccessful && deleteSuccessful){
+            updateToOtherDatabaseSuccessful = true;
+        }
+       return updateToOtherDatabaseSuccessful;
     }
 
     public boolean delete(int id){
