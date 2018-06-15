@@ -47,10 +47,8 @@ public class ActivityDatabaseView extends AppCompatActivity {
                 int id = word.getId();
                 String firstTranslation = word.getFirstTranslation();
                 String secondTranslation = word.getSecondTranslation();
-//usunac aN plus wyswietlanie tego jak juz nie bedzie potrzebne
-                int aN = word.getAssignmentNumber();
                 //here change view of db
-                String textViewContents = firstTranslation + " - " + secondTranslation + " aN: " + aN;
+                String textViewContents = firstTranslation + " - " + secondTranslation;
 
                 TextView textViewWordItem = new TextView(this);
                 textViewWordItem.setPadding(0, 10, 0, 10);

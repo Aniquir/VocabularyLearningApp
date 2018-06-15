@@ -33,21 +33,6 @@ public class TableControllerWord extends AppDatabaseHandler{
         return createSuccessful;
     }
 
-    public boolean createWithThisSameId(ObjectWord objectWord){
-
-        ContentValues values = new ContentValues();
-
-        values.put("id", objectWord.getId());
-        values.put("firstTranslation", objectWord.getFirstTranslation());
-        values.put("secondTranslation", objectWord.getSecondTranslation());
-        values.put("assignmentNumber", objectWord.getAssignmentNumber());
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        boolean createSuccessful = db.insert("words", null, values) > 0;
-        db.close();
-
-        return createSuccessful;
-    }
     public int count(int numNeededToDisplayCorrectDb){
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -124,9 +109,9 @@ public class TableControllerWord extends AppDatabaseHandler{
     public boolean update(ObjectWord objectWord){
 
         ContentValues values = new ContentValues();
-
         values.put("firstTranslation", objectWord.getFirstTranslation());
         values.put("secondTranslation", objectWord.getSecondTranslation());
+
 
         String where = "id = ?";
 
@@ -139,18 +124,23 @@ public class TableControllerWord extends AppDatabaseHandler{
 
         return updateSuccessful;
     }
-    //transfer to other database(this same but with changed assingmentNumber)
-    public boolean updateToOtherDatabase(ObjectWord objectWord){
+    //transfer to other database(this same but with changed assignmentNumber)
+    public boolean updateByChangeAssignmentNumber(ObjectWord objectWord, int assignmentNumber){
 
-        boolean updateToOtherDatabaseSuccessful = false;
+        ContentValues values = new ContentValues();
 
-        boolean createSuccessful = createWithThisSameId(objectWord);
-        boolean deleteSuccessful = delete(objectWord.getId());
+        values.put("assignmentNumber", assignmentNumber);
 
-        if (createSuccessful && deleteSuccessful){
-            updateToOtherDatabaseSuccessful = true;
-        }
-       return updateToOtherDatabaseSuccessful;
+        String where = "id = ?";
+
+        String[] whereArgs = { Integer.toString(objectWord.getId()) };
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        boolean updateByChangeAssignmentNumberSuccessful = db.update("words", values, where, whereArgs) > 0;
+        db.close();
+
+        return updateByChangeAssignmentNumberSuccessful;
     }
 
     public boolean delete(int id){
@@ -164,3 +154,4 @@ public class TableControllerWord extends AppDatabaseHandler{
         return deleteSuccessful;
     }
 }
+

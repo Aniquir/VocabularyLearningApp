@@ -16,7 +16,8 @@ import example.com.vocabularylearningapp.entity.ObjectWord;
 public class ActivitySecondTranslationWord extends AppCompatActivity {
 
     Context context;
-    ObjectWord objectWord;
+    ObjectWord objectWord = ActivityFirstTranslationWord.objectWord;
+    int assignmentNumerOfWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +30,10 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
         putInRepeatWordsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                objectWord = ActivityFirstTranslationWord.objectWord;
-                objectWord.setAssignmentNumber(1);
                 context = v.getContext();
 
-                boolean transferToOtherDatabase = new TableControllerWord(context).updateToOtherDatabase(objectWord);
+                assignmentNumerOfWord = 1;
+                boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumerOfWord);
 
                 if (transferToOtherDatabase) {
                     Toast.makeText(context, "Word record was transfered to new databse.", Toast.LENGTH_SHORT).show();
@@ -52,8 +52,9 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 context = v.getContext();
-                ActivityFirstTranslationWord.objectWord.setAssignmentNumber(2);
-                boolean transferToOtherDatabase = new TableControllerWord(context).updateToOtherDatabase(ActivityFirstTranslationWord.objectWord);
+
+                assignmentNumerOfWord = 2;
+                boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumerOfWord);
 
                 if (transferToOtherDatabase) {
                     Toast.makeText(context, "Word record was transfered to new databse.", Toast.LENGTH_SHORT).show();
