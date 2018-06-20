@@ -20,11 +20,17 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
     public static String objectWordFirstTranslation;
     public static String objectWordSecondTranslation;
     public static ObjectWord objectWord = new ObjectWord();
+    public static int currentNumberOfWordCounter = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_translation);
+
+        TextView textView = findViewById(R.id.counterOfLearningWordsTextViewFirstTranslation);
+        textView.setText(currentNumberOfWordCounter
+                            + " / "
+                            + ActivityAfterClickStartButton.numberOfWordsInTheSet);
 
         //method reads word from correct database
         readWord(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
@@ -58,7 +64,7 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
 
     public void readFirstAndSecondTranslation(int numNeededToDisplayCorrectDb) {
         TextView textViewFirstTranslation = findViewById(R.id.textViewFirstTranslation);
-        TextView textViewSecondTranslation = findViewById(R.id.textViewSecondTranslation);
+//        TextView textViewSecondTranslation = findViewById(R.id.textViewSecondTranslation);
 
 
         List<ObjectWord> words = new TableControllerWord(this).read(numNeededToDisplayCorrectDb);
@@ -80,4 +86,5 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
             textViewFirstTranslation.setText("No records yet.");
         }
     }
+
 }

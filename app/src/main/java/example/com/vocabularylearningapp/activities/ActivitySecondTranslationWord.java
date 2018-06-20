@@ -23,8 +23,14 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_translation);
+
         TextView textView = findViewById(R.id.textViewSecondTranslation);
         textView.setText(ActivityFirstTranslationWord.objectWordSecondTranslation);
+
+        TextView textView1 = findViewById(R.id.counterOfLearningWordsTextViewSecondTranslation);
+        textView1.setText(ActivityFirstTranslationWord.currentNumberOfWordCounter
+                + " / "
+                + ActivityAfterClickStartButton.numberOfWordsInTheSet);
 
         Button putInRepeatWordsButton = findViewById(R.id.putInRepeatWordsButton);
         putInRepeatWordsButton.setOnClickListener(new View.OnClickListener() {
@@ -36,14 +42,22 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
                 boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumerOfWord);
 
                 if (transferToOtherDatabase) {
+                    ActivityFirstTranslationWord.currentNumberOfWordCounter++;
                     Toast.makeText(context, "Word record was transfered to new databse.", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(context, "Unable to transfer word record.", Toast.LENGTH_SHORT).show();
                 }
 
-                Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
-                        ActivityFirstTranslationWord.class);
-                startActivity(myIntenet);
+                if (ActivityFirstTranslationWord.currentNumberOfWordCounter > ActivityAfterClickStartButton.numberOfWordsInTheSet) {
+                    Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
+                            MainActivity.class);
+                    startActivity(myIntenet);
+                } else {
+                    Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
+                            ActivityFirstTranslationWord.class);
+                    startActivity(myIntenet);
+                }
+
             }
         });
 
@@ -57,14 +71,21 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
                 boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumerOfWord);
 
                 if (transferToOtherDatabase) {
+                    ActivityFirstTranslationWord.currentNumberOfWordCounter++;
                     Toast.makeText(context, "Word record was transfered to new databse.", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(context, "Unable to transfer word record.", Toast.LENGTH_SHORT).show();
                 }
 
-                Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
-                        ActivityFirstTranslationWord.class);
-                startActivity(myIntenet);
+                if (ActivityFirstTranslationWord.currentNumberOfWordCounter > ActivityAfterClickStartButton.numberOfWordsInTheSet) {
+                    Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
+                            MainActivity.class);
+                    startActivity(myIntenet);
+                } else {
+                    Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
+                            ActivityFirstTranslationWord.class);
+                    startActivity(myIntenet);
+                }
             }
         });
 

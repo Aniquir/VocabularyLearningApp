@@ -10,6 +10,8 @@ import example.com.vocabularylearningapp.R;
 
 public class ActivityAfterClickStartButton extends AppCompatActivity {
 
+    public static int numberOfWordsInTheSet = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +21,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
         newWordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                numberOfWordsInTheSet = 10;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 0;
                 Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
                         ActivityFirstTranslationWord.class);
@@ -31,6 +33,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
         repeatWordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 1;
                 Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
                         ActivityFirstTranslationWord.class);
@@ -42,6 +45,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
         knownWordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 2;
                 Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
                         ActivityFirstTranslationWord.class);
@@ -49,4 +53,12 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             }
         });
     }
+//    public void loopOfActivityToViewWordsAndSetValueInTheCounter(int countOfWords){
+//
+//        numberOfWordsInTheSet = countOfWords;
+//        for (int i = 0; i < countOfWords; i++) {
+//            numberOfWordsToView = i + 1;
+//
+//        }
+//    }
 }
