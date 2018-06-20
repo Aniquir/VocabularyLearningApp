@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,16 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_translation);
+
+        ImageButton backToMainMenuButton = findViewById(R.id.imageButtonBackToMainMenu);
+        backToMainMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
+                        MainActivity.class);
+                startActivity(myIntenet);
+            }
+        });
 
         TextView textView = findViewById(R.id.textViewSecondTranslation);
         textView.setText(ActivityFirstTranslationWord.objectWordSecondTranslation);

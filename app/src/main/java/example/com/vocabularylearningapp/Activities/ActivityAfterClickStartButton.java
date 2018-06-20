@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import example.com.vocabularylearningapp.R;
 
@@ -16,6 +17,16 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_click_start_button);
+
+        ImageButton backToMainMenuButton = findViewById(R.id.imageButtonBackToMainMenu);
+        backToMainMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
+                        MainActivity.class);
+                startActivity(myIntenet);
+            }
+        });
 
         Button newWordButton = findViewById(R.id.start1NewWords);
         newWordButton.setOnClickListener(new View.OnClickListener() {

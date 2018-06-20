@@ -1,7 +1,10 @@
 package example.com.vocabularylearningapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,6 +26,16 @@ public class ActivityDatabaseView extends AppCompatActivity {
         setContentView(R.layout.activity_database_view);
         countRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
         readRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
+
+        ImageButton backToMainMenuButton = findViewById(R.id.imageButtonBackToMainMenu);
+        backToMainMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntenet = new Intent(ActivityDatabaseView.this,
+                        MainActivity.class);
+                startActivity(myIntenet);
+            }
+        });
     }
 
 
