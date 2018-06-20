@@ -14,7 +14,7 @@
         android:layout_marginTop="100dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="DATABSE OF NEW WORDS" />
+        android:text="@string/databse_of_new_words" />
 
     <Button
         android:id="@+id/buttonDbRepeatWords"
@@ -25,7 +25,7 @@
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="DATABASE OF REPEAT WORDS" />
+        android:text="@string/database_of_repeat_words" />
 
     <Button
         android:id="@+id/buttonDbKnownWords"
@@ -36,6 +36,6 @@
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="DATABASE OF KNOWS WORDS" />
+        android:text="@string/database_of_knows_words" />
 
 </RelativeLayout>

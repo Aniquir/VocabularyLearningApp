@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="163dp"
-        android:text="First Translation" />
+        android:text="@string/first_translationSmallLetters" />
 
     <Button
         android:id="@+id/buttonToGoNextFirstTranslation"
@@ -21,7 +21,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="191dp"
-        android:text=">"
+        android:text="@string/symbolNEXT"
         android:textSize="36sp" />
 
     <TextView
@@ -32,5 +32,5 @@
         android:layout_alignParentTop="true"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        android:text="0 / 0" />
+        android:text="@string/_0_0" />
 </RelativeLayout>

@@ -14,7 +14,7 @@
         android:layout_marginTop="100dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="NEW" />
+        android:text="@string/newWord" />
 
     <Button
         android:id="@+id/start1RepeatWords"
@@ -25,7 +25,7 @@
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="REPEAT" />
+        android:text="@string/repeat" />
 
     <Button
         android:id="@+id/start1KnownWords"
@@ -36,6 +36,6 @@
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="KNOW" />
+        android:text="@string/know" />
 
 </RelativeLayout>

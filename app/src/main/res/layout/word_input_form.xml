@@ -7,9 +7,9 @@
         android:id="@+id/editTextWordFirstTranslation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:hint="first translation"
+        android:hint="@string/first_translation"
         android:singleLine="true" >
 
         <requestFocus />
@@ -19,9 +19,9 @@
         android:id="@+id/editTextWordSecondTranslation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/editTextWordFirstTranslation"
-        android:hint="second translation"
+        android:hint="@string/second_translation"
         android:singleLine="true" />
 
 </RelativeLayout>

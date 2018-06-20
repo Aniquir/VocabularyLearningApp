@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="199dp"
-        android:text="Second Translation" />
+        android:text="@string/second_translationSmallLetters" />
 
     <Button
         android:id="@+id/putInRepeatWordsButton"
@@ -22,7 +22,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/putInKnownWordsButton"
         android:layout_marginStart="20dp"
-        android:text="Put in repeat words" />
+        android:text="@string/put_in_repeat_words" />
 
     <Button
         android:id="@+id/putInKnownWordsButton"
@@ -32,7 +32,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="161dp"
         android:layout_marginEnd="20dp"
-        android:text="Put in known words" />
+        android:text="@string/put_in_known_words" />
 
     <TextView
         android:id="@+id/counterOfLearningWordsTextViewSecondTranslation"
@@ -41,5 +41,5 @@
         android:layout_alignEnd="@+id/putInKnownWordsButton"
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
-        android:text="0 / 0" />
+        android:text="@string/_0_0" />
 </RelativeLayout>

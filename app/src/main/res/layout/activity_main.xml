@@ -14,7 +14,7 @@
         android:layout_marginTop="100dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="START" />
+        android:text="@string/start" />
 
     <Button
         android:id="@+id/addWordButton"
@@ -25,7 +25,7 @@
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="ADD WORD" />
+        android:text="@string/add_word" />
 
     <Button
         android:id="@+id/dbButton"
@@ -36,6 +36,6 @@
         android:layout_marginTop="10dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="DATABASE" />
+        android:text="@string/database" />
 
 </RelativeLayout>

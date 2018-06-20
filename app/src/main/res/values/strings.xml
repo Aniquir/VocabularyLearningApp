@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">VocabularyLearningApp</string>
     <string name="this_database_is_empty">THE DATABASE OF WORDS\n IS EMPTY :(</string>
+    <string name="databse_of_new_words">DATABSE OF NEW WORDS</string>
+    <string name="database_of_repeat_words">DATABASE OF REPEAT WORDS</string>
+    <string name="database_of_knows_words">DATABASE OF KNOWS WORDS</string>
+    <string name="repeat">REPEAT</string>
+    <string name="know">KNOW</string>
+    <string name="_0_records_found">0 records found</string>
+    <string name="first_translation">First Translation</string>
+    <string name="symbolNEXT"><![CDATA[>]]></string>
+    <string name="_0_0">0 / 0</string>
+    <string name="start">START</string>
+    <string name="add_word">ADD WORD</string>
+    <string name="database">DATABASE</string>
+    <string name="second_translation">Second Translation</string>
+    <string name="put_in_repeat_words">Put in repeat words</string>
+    <string name="put_in_known_words">Put in known words</string>
+    <string name="first_translationSmallLetters">first translation</string>
+    <string name="second_translationSmallLetters">second translation</string>
+    <string name="newWord">NEW</string>
 </resources>
