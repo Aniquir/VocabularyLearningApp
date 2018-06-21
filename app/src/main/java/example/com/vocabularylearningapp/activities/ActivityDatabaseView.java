@@ -1,8 +1,10 @@
 package example.com.vocabularylearningapp.activities;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -17,8 +19,6 @@ import example.com.vocabularylearningapp.onClickListeners.OnLongClickListenerWor
 
 
 public class ActivityDatabaseView extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,6 @@ public class ActivityDatabaseView extends AppCompatActivity {
             }
         });
     }
-
 
     public void countRecords(int numNeededToDisplayCorrectDb) {
 
@@ -60,10 +59,14 @@ public class ActivityDatabaseView extends AppCompatActivity {
                 int id = word.getId();
                 String firstTranslation = word.getFirstTranslation();
                 String secondTranslation = word.getSecondTranslation();
+
                 //here change view of db
                 String textViewContents = firstTranslation + " - " + secondTranslation;
 
                 TextView textViewWordItem = new TextView(this);
+                textViewWordItem.setTextSize(20);
+                textViewWordItem.setTypeface(null, Typeface.BOLD);
+                textViewWordItem.setGravity(Gravity.CENTER_HORIZONTAL);
                 textViewWordItem.setPadding(0, 10, 0, 10);
                 textViewWordItem.setText(textViewContents);
                 textViewWordItem.setTag(Integer.toString(id));
@@ -74,7 +77,10 @@ public class ActivityDatabaseView extends AppCompatActivity {
         } else {
 
             TextView locationItem = new TextView(this);
-            locationItem.setPadding(8, 8, 8, 8);
+            locationItem.setTypeface(null, Typeface.BOLD);
+            locationItem.setTextSize(24);
+            locationItem.setGravity(Gravity.CENTER_HORIZONTAL);
+            locationItem.setPadding(8, 80, 8, 8);
             locationItem.setText("No records yet.");
 
             linearLayoutRecords.addView(locationItem);

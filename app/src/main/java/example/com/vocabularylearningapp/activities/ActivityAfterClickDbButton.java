@@ -62,6 +62,4 @@ public class ActivityAfterClickDbButton extends AppCompatActivity {
             }
         });
     }
-
-
 }

@@ -46,7 +46,7 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
         //method reads word from correct database
         readWord(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
 
-        Button nextButton = findViewById(R.id.buttonToGoNextFirstTranslation);
+        ImageButton nextButton = findViewById(R.id.buttonToGoNextFirstTranslation);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +76,6 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
     public void readFirstAndSecondTranslation(int numNeededToDisplayCorrectDb) {
         TextView textViewFirstTranslation = findViewById(R.id.textViewFirstTranslation);
 //        TextView textViewSecondTranslation = findViewById(R.id.textViewSecondTranslation);
-
 
         List<ObjectWord> words = new TableControllerWord(this).read(numNeededToDisplayCorrectDb);
 

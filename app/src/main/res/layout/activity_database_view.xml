@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main_background_db"
     tools:context=".activities.ActivityDatabaseView">
 
     <TextView
         android:id="@+id/counterOfWordsInDatabase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/_0_records_found" />
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/_0_records_found"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:id="@+id/scrollViewRecords"
@@ -38,6 +42,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="11dp"
         android:layout_marginTop="11dp"
+        android:background="@android:color/holo_red_dark"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
 

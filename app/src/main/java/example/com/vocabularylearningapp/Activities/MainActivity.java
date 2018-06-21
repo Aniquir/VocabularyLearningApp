@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
-//this needs implementation v
+
         Button buttonAddWord = findViewById(R.id.addWordButton);
         buttonAddWord.setOnClickListener(new OnClickListenerNewWordButton());
 
@@ -39,7 +39,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntenet2);
             }
         });
-
     }
-
 }

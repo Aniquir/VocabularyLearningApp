@@ -64,12 +64,4 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             }
         });
     }
-//    public void loopOfActivityToViewWordsAndSetValueInTheCounter(int countOfWords){
-//
-//        numberOfWordsInTheSet = countOfWords;
-//        for (int i = 0; i < countOfWords; i++) {
-//            numberOfWordsToView = i + 1;
-//
-//        }
-//    }
 }

@@ -18,7 +18,7 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
 
     Context context;
     ObjectWord objectWord = ActivityFirstTranslationWord.objectWord;
-    int assignmentNumerOfWord;
+    int assignmentNumberOfWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +49,8 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
             public void onClick(View v) {
                 context = v.getContext();
 
-                assignmentNumerOfWord = 1;
-                boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumerOfWord);
+                assignmentNumberOfWord = 1;
+                boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumberOfWord);
 
                 if (transferToOtherDatabase) {
                     ActivityFirstTranslationWord.currentNumberOfWordCounter++;
@@ -78,8 +78,8 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
             public void onClick(View v) {
                 context = v.getContext();
 
-                assignmentNumerOfWord = 2;
-                boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumerOfWord);
+                assignmentNumberOfWord = 2;
+                boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumberOfWord);
 
                 if (transferToOtherDatabase) {
                     ActivityFirstTranslationWord.currentNumberOfWordCounter++;
@@ -99,7 +99,5 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
                 }
             }
         });
-
     }
-
 }

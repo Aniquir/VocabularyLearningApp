@@ -12,7 +12,6 @@ import example.com.vocabularylearningapp.entity.ObjectWord;
 
 public class TableControllerWord extends AppDatabaseHandler{
 
-
     public TableControllerWord(Context context) {
         super(context);
     }
@@ -111,7 +110,6 @@ public class TableControllerWord extends AppDatabaseHandler{
         ContentValues values = new ContentValues();
         values.put("firstTranslation", objectWord.getFirstTranslation());
         values.put("secondTranslation", objectWord.getSecondTranslation());
-
 
         String where = "id = ?";
 

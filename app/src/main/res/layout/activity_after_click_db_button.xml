@@ -4,40 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_background_db"
     tools:context=".activities.ActivityAfterClickDbButton">
 
     <Button
         android:id="@+id/buttonDbNewWords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="@string/databse_of_new_words" />
+        android:background="#ff8800"
+        android:text="@string/databse_of_new_words"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonDbRepeatWords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonDbNewWords"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
         android:width="250dp"
         android:height="100dp"
-        android:text="@string/database_of_repeat_words" />
+        android:background="#dc7500"
+        android:text="@string/database_of_repeat_words"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonDbKnownWords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonDbRepeatWords"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="90dp"
         android:width="250dp"
         android:height="100dp"
-        android:text="@string/database_of_knows_words" />
+        android:background="#b56100"
+        android:text="@string/database_of_knows_words"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ImageButton
         android:id="@+id/imageButtonBackToMainMenu"
@@ -47,6 +65,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="11dp"
         android:layout_marginTop="11dp"
+        android:adjustViewBounds="false"
+        android:background="@android:color/holo_red_dark"
+        android:cropToPadding="false"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
 </RelativeLayout>
