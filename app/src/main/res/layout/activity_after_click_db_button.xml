@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,11 +10,12 @@
     <Button
         android:id="@+id/buttonDbNewWords"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_width="280dp"
+        android:layout_height="140dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:width="250dp"
         android:height="100dp"
         android:background="#ff8800"
@@ -22,13 +23,17 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDbRepeatWords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonDbRepeatWords"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_width="280dp"
+        android:layout_height="140dp"
         android:layout_centerInParent="true"
         android:width="250dp"
         android:height="100dp"
@@ -37,16 +42,22 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDbKnownWords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDbNewWords" />
 
     <Button
         android:id="@+id/buttonDbKnownWords"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_width="280dp"
+        android:layout_height="140dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:width="250dp"
         android:height="100dp"
         android:background="#b56100"
@@ -55,7 +66,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDbRepeatWords" />
 
     <ImageButton
         android:id="@+id/imageButtonBackToMainMenu"
@@ -63,11 +79,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:adjustViewBounds="false"
         android:background="@android:color/holo_red_dark"
         android:cropToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

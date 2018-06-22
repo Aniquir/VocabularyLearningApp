@@ -1,35 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/main_background_translations"
     tools:context=".activities.ActivitySecondTranslationWord">
 
     <Button
         android:id="@+id/putInRepeatWordsButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="180dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/putInKnownWordsButton"
-        android:layout_marginStart="20dp"
+        android:layout_marginBottom="50dp"
         android:background="@android:color/holo_green_light"
-        android:text="@string/put_in_repeat_words" />
+        android:text="@string/put_in_repeat_words"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/putInKnownWordsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/putInKnownWordsButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="180dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="161dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="70dp"
         android:background="@android:color/holo_green_light"
-        android:text="@string/put_in_known_words" />
+        android:text="@string/put_in_known_words"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/counterOfLearningWordsTextViewSecondTranslation"
@@ -37,9 +46,13 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/putInKnownWordsButton"
         android:layout_alignTop="@+id/imageButtonBackToMainMenu"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/_0_0"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButtonBackToMainMenu"
@@ -47,9 +60,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:background="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     <ImageView
@@ -58,9 +73,13 @@
         android:layout_height="160dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"
-        app:srcCompat="@android:color/white"
-        android:alpha="0.4"/>
+        android:layout_marginTop="124dp"
+        android:alpha="0.4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/white" />
 
     <TextView
         android:id="@+id/textViewSecondTranslation"
@@ -68,9 +87,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="64dp"
         android:text="@string/second_translationSmallLetters"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewFirstTranslation"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFirstTranslation"
+        app:layout_constraintTop_toTopOf="@+id/imageViewFirstTranslation" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
