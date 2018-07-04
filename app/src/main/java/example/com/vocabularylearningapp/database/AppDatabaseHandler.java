@@ -7,22 +7,23 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class AppDatabaseHandler extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    protected static final String DATABASE_NAME = "databaseOfWords";
+    private static final String DATABASE_NAME = "words";
 
-    public AppDatabaseHandler(Context context) {
+    AppDatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String sql = "CREATE TABLE words" +
+        String sql = "CREATE TABLE IF NOT EXISTS words" +
                 "( id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "firstTranslation TEXT, " +
                 "secondTranslation TEXT, " +
                 "assignmentNumber INTEGER) ";
 
         db.execSQL(sql);
+
     }
 
     @Override

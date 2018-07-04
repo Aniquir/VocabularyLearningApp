@@ -151,5 +151,17 @@ public class TableControllerWord extends AppDatabaseHandler{
 
         return deleteSuccessful;
     }
+
+    public boolean isDbEmpty(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor mCursor = db.rawQuery("SELECT * FROM " + "words", null);
+        Boolean rowExists = true;
+
+        if (mCursor.moveToFirst())
+        {
+            rowExists = false;
+        }
+        return rowExists;
+    }
 }
 
