@@ -68,6 +68,7 @@ public class ActivityDatabaseView extends AppCompatActivity {
                 textViewWordItem.setTypeface(null, Typeface.BOLD);
                 textViewWordItem.setGravity(Gravity.CENTER_HORIZONTAL);
                 textViewWordItem.setPadding(0, 10, 0, 10);
+                textViewWordItem.setTextColor(this.getResources().getColor(R.color.halfTransparentBlue));
                 textViewWordItem.setText(textViewContents);
                 textViewWordItem.setTag(Integer.toString(id));
                 textViewWordItem.setOnLongClickListener(new OnLongClickListenerWordRecord());
@@ -81,6 +82,7 @@ public class ActivityDatabaseView extends AppCompatActivity {
             locationItem.setTextSize(24);
             locationItem.setGravity(Gravity.CENTER_HORIZONTAL);
             locationItem.setPadding(8, 80, 8, 8);
+            locationItem.setTextColor(this.getResources().getColor(R.color.halfTransparentBlue));
             locationItem.setText("No records yet.");
 
             linearLayoutRecords.addView(locationItem);
