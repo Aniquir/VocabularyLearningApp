@@ -17,6 +17,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_click_start_button);
+        ActivityFirstTranslationWord.currentNumberOfWordCounter = 1;
 
         ImageButton backToMainMenuButton = findViewById(R.id.imageButtonBackToMainMenu);
         backToMainMenuButton.setOnClickListener(new View.OnClickListener() {
