@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -76,13 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 objectWord.setFirstTranslation(tokens[0]);
                 objectWord.setSecondTranslation(tokens[1]);
 
-                boolean createSuccessful = new TableControllerWord(this).create(objectWord);
+                new TableControllerWord(this).create(objectWord);
 
-                if (createSuccessful) {
-                    Toast.makeText(this, "The database has been loaded", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(this, "the database hasn't been loaded", Toast.LENGTH_SHORT).show();
-                }
             }
         } catch (IOException ex) {
             ex.printStackTrace();
