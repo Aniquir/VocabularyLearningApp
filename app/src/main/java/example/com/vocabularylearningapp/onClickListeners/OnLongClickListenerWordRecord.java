@@ -67,7 +67,7 @@ public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
         editTextWordFirstTranslation.setText(objectWord.getFirstTranslation());
         editTextWordSecondTranslation.setText(objectWord.getSecondTranslation());
 
-        new AlertDialog.Builder(context)
+        new AlertDialog.Builder(context, R.style.MyDialogTheme)
                 .setView(formElementsView)
                 .setTitle("Edit Record")
                 .setPositiveButton("Save Changes", new DialogInterface.OnClickListener() {
