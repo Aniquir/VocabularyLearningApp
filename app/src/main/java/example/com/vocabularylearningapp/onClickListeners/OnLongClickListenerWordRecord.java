@@ -24,8 +24,9 @@ public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
         context = v.getContext();
         id = v.getTag().toString();
 
-        final CharSequence[] items = {"Edit", "Delete"};
-        new AlertDialog.Builder(context).setTitle("Word Record")
+        final CharSequence[] items = {"EDIT", "DELETE"};
+        new AlertDialog.Builder(context, R.style.MyDialogTheme)
+                .setTitle("Word record")
                 .setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {

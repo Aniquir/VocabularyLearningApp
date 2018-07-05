@@ -25,9 +25,10 @@ public class OnClickListenerNewWordButton implements View.OnClickListener{
         final EditText editTextFirstTranslation = formElementsView.findViewById(R.id.editTextWordFirstTranslation);
         final EditText editTextSecondTranslation = formElementsView.findViewById(R.id.editTextWordSecondTranslation);
 
-        new AlertDialog.Builder(context)
+        new AlertDialog.Builder(context, R.style.MyDialogTheme)
                 .setView(formElementsView)
-                .setTitle("New Word")
+                .setTitle("New word")
+
                 .setPositiveButton("Add",
                         new DialogInterface.OnClickListener() {
                             @Override
