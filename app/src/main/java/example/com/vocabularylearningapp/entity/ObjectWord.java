@@ -13,14 +13,15 @@ public class ObjectWord {
     private int id;
 
     @ColumnInfo(name = "first_translation")
+    private
     String firstTranslation;
 
     @ColumnInfo(name = "second_translation")
+    private
     String secondTranslation;
 
-    //assignmentNumber means where the word belong, 0 - new, 1 - repeat, 2 - known word
-
     @ColumnInfo(name = "assignment_number")
+    private
     int assignmentNumber;
 
     public ObjectWord() {
@@ -31,7 +32,6 @@ public class ObjectWord {
         this.firstTranslation = firstTranslation;
         this.secondTranslation = secondTranslation;
         this.assignmentNumber = assignmentNumber;
-
     }
 
     public int getId() {
@@ -59,7 +59,7 @@ public class ObjectWord {
     }
 
     public int getAssignmentNumber() {
-        assignmentNumber = 0;//default value
+        assignmentNumber = 0;
         return assignmentNumber;
     }
 

@@ -23,15 +23,8 @@ public class AppDatabaseHandler extends SQLiteOpenHelper {
                 "assignmentNumber INTEGER) ";
 
         db.execSQL(sql);
-
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-        String sql = "DROP TABLE IF EXISTS words";
-        db.execSQL(sql);
-
-        onCreate(db);
-    }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
 }

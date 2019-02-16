@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="example.com.vocabularylearningapp">
 
     <application
@@ -8,8 +9,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activities.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,11 +21,16 @@
         </activity>
         <activity
             android:name=".activities.ActivityAfterClickStartButton"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activities.MainActivity" />
-        <activity android:name=".activities.ActivityAfterClickDbButton" />
-        <activity android:name=".activities.ActivityDatabaseView" />
-        <activity android:name=".activities.ActivityFirstTranslationWord" />
-        <activity android:name=".activities.ActivitySecondTranslationWord"></activity>
+        <activity android:name=".activities.ActivityAfterClickDbButton"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ActivityDatabaseView"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ActivityFirstTranslationWord"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ActivitySecondTranslationWord"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

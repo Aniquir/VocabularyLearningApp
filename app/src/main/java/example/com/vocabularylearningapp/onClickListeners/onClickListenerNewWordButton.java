@@ -27,9 +27,9 @@ public class OnClickListenerNewWordButton implements View.OnClickListener{
 
         new AlertDialog.Builder(context, R.style.MyDialogTheme)
                 .setView(formElementsView)
-                .setTitle("New word")
+                .setTitle("new word")
 
-                .setPositiveButton("Add",
+                .setPositiveButton("add",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -45,9 +45,9 @@ public class OnClickListenerNewWordButton implements View.OnClickListener{
                                 boolean createSuccessful = new TableControllerWord(context).create(objectWord);
 
                                 if (createSuccessful){
-                                    Toast.makeText(context, "The word will be saved.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "the word has been saved", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Toast.makeText(context, "The word has not been saved.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "the word has NOT been saved", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }).show();

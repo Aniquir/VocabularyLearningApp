@@ -1,10 +1,10 @@
 package example.com.vocabularylearningapp.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -23,6 +23,7 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
     public static ObjectWord objectWord = new ObjectWord();
     public static int currentNumberOfWordCounter = 1;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,6 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
                             + " / "
                             + ActivityAfterClickStartButton.numberOfWordsInTheSet);
 
-        //method reads word from correct database
         readWord(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
 
         ImageButton nextButton = findViewById(R.id.buttonToGoNextFirstTranslation);
@@ -60,22 +60,19 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
     private void readWord(int numNeededToDisplayCorrectDb) {
 
         if (numNeededToDisplayCorrectDb == 0) {
-
             readFirstAndSecondTranslation(numNeededToDisplayCorrectDb);
 
         } else if (numNeededToDisplayCorrectDb == 1) {
-
             readFirstAndSecondTranslation(numNeededToDisplayCorrectDb);
 
         } else {
-
             readFirstAndSecondTranslation(numNeededToDisplayCorrectDb);
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void readFirstAndSecondTranslation(int numNeededToDisplayCorrectDb) {
         TextView textViewFirstTranslation = findViewById(R.id.textViewFirstTranslation);
-//        TextView textViewSecondTranslation = findViewById(R.id.textViewSecondTranslation);
 
         List<ObjectWord> words = new TableControllerWord(this).read(numNeededToDisplayCorrectDb);
 
@@ -93,7 +90,7 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
 
             textViewFirstTranslation.setText(objectWordFirstTranslation);
         } else {
-            textViewFirstTranslation.setText("No records yet.");
+            textViewFirstTranslation.setText(getString(R.string.no_records_yet));
         }
     }
 

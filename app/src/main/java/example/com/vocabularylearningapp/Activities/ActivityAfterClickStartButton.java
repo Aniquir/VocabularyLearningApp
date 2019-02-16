@@ -35,9 +35,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 10;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 0;
-                Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
-                        ActivityFirstTranslationWord.class);
-                startActivity(myIntenet);
+                startFirstTranslationWordView();
             }
         });
 
@@ -47,9 +45,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 1;
-                Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
-                        ActivityFirstTranslationWord.class);
-                startActivity(myIntenet);
+                startFirstTranslationWordView();
             }
         });
 
@@ -59,10 +55,14 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 2;
-                Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
-                        ActivityFirstTranslationWord.class);
-                startActivity(myIntenet);
+                startFirstTranslationWordView();
             }
         });
+    }
+
+    private void startFirstTranslationWordView() {
+        Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
+                ActivityFirstTranslationWord.class);
+        startActivity(myIntenet);
     }
 }

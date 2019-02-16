@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        add basic database if doesn't exist
+
         if (new TableControllerWord(this).isDbEmpty()) {
             readBasicDatabaseFromRes();
         }
@@ -57,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
         InputStream inputStream = getResources().openRawResource(R.raw.database);
 
         BufferedReader reader = new BufferedReader(
-                new InputStreamReader(inputStream, Charset.forName("windows-1250"))
-        );
+                new InputStreamReader(inputStream, Charset.forName("windows-1250")));
 
         String line = "";
 

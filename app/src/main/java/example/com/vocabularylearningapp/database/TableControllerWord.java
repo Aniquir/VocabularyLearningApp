@@ -122,7 +122,7 @@ public class TableControllerWord extends AppDatabaseHandler{
 
         return updateSuccessful;
     }
-    //transfer to other database(this same but with changed assignmentNumber)
+
     public boolean updateByChangeAssignmentNumber(ObjectWord objectWord, int assignmentNumber){
 
         ContentValues values = new ContentValues();

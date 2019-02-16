@@ -1,5 +1,6 @@
 package example.com.vocabularylearningapp.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -38,14 +39,19 @@ public class ActivityDatabaseView extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     public void countRecords(int numNeededToDisplayCorrectDb) {
 
         int recordCount = new TableControllerWord(this).count(numNeededToDisplayCorrectDb);
         TextView textViewRecordCount = findViewById(R.id.counterOfWordsInDatabase);
-        textViewRecordCount.setText(recordCount + " words found");
-
+        if (recordCount == 1){
+            textViewRecordCount.setText(recordCount + " word");
+        } else {
+            textViewRecordCount.setText(recordCount + " words");
+        }
     }
 
+    @SuppressLint("SetTextI18n")
     public void readRecords(int numNeededToDisplayCorrectDb) {
 
         LinearLayout linearLayoutRecords = findViewById(R.id.linearLayoutRecords);
@@ -60,7 +66,6 @@ public class ActivityDatabaseView extends AppCompatActivity {
                 String firstTranslation = word.getFirstTranslation();
                 String secondTranslation = word.getSecondTranslation();
 
-                //here change view of db
                 String textViewContents = firstTranslation + " - " + secondTranslation;
 
                 TextView textViewWordItem = new TextView(this);
@@ -83,7 +88,7 @@ public class ActivityDatabaseView extends AppCompatActivity {
             locationItem.setGravity(Gravity.CENTER_HORIZONTAL);
             locationItem.setPadding(8, 80, 8, 8);
             locationItem.setTextColor(this.getResources().getColor(R.color.halfTransparentBlue));
-            locationItem.setText("No records yet.");
+            locationItem.setText(getString(R.string.no_records_yet));
 
             linearLayoutRecords.addView(locationItem);
         }

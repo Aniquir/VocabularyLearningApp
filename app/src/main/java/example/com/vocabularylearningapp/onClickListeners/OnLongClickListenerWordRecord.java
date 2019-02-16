@@ -26,7 +26,7 @@ public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
 
         final CharSequence[] items = {"EDIT", "DELETE"};
         new AlertDialog.Builder(context, R.style.MyDialogTheme)
-                .setTitle("Word record")
+                .setTitle("What you want to do?")
                 .setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {
@@ -41,9 +41,9 @@ public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
                             boolean deleteSuccessful = new TableControllerWord(context).delete(Integer.parseInt(id));
 
                             if (deleteSuccessful) {
-                                Toast.makeText(context, "Word record was deleted.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "the word has been removed.", Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(context, "Unable to delete word record.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "the word can not be deleted", Toast.LENGTH_SHORT).show();
                             }
                             ((ActivityDatabaseView) context).countRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
                             ((ActivityDatabaseView) context).readRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
@@ -59,6 +59,7 @@ public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
         ObjectWord objectWord = tableControllerWord.readSingleRecord(wordId);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        assert inflater != null;
         final View formElementsView = inflater.inflate(R.layout.word_input_form, null, false);
 
         final EditText editTextWordFirstTranslation = formElementsView.findViewById(R.id.editTextWordFirstTranslation);
@@ -69,8 +70,8 @@ public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
 
         new AlertDialog.Builder(context, R.style.MyDialogTheme)
                 .setView(formElementsView)
-                .setTitle("Edit Record")
-                .setPositiveButton("Save Changes", new DialogInterface.OnClickListener() {
+                .setTitle("edit word")
+                .setPositiveButton("save", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
@@ -84,9 +85,9 @@ public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
                         boolean updateSuccessful = tableControllerWord.update(objectWord);
 
                         if (updateSuccessful) {
-                            Toast.makeText(context, "Word record was updated.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "word has been updated", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(context, "Unable to update word record.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "the word can not be updated", Toast.LENGTH_SHORT).show();
                         }
                         ((ActivityDatabaseView) context).countRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);
                         ((ActivityDatabaseView) context).readRecords(ActivityAfterClickDbButton.numNeededToDisplayCorrectDb);

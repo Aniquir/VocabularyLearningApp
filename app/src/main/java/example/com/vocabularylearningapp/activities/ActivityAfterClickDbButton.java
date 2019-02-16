@@ -34,9 +34,7 @@ public class ActivityAfterClickDbButton extends AppCompatActivity {
             public void onClick(View v) {
 
                 numNeededToDisplayCorrectDb = 0;
-                Intent myIntenet = new Intent(ActivityAfterClickDbButton.this,
-                        ActivityDatabaseView.class);
-                startActivity(myIntenet);
+                startDatabaseView();
             }
         });
 
@@ -45,9 +43,7 @@ public class ActivityAfterClickDbButton extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 numNeededToDisplayCorrectDb = 1;
-                Intent myIntenet = new Intent(ActivityAfterClickDbButton.this,
-                        ActivityDatabaseView.class);
-                startActivity(myIntenet);
+                startDatabaseView();
             }
         });
 
@@ -56,10 +52,14 @@ public class ActivityAfterClickDbButton extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 numNeededToDisplayCorrectDb = 2;
-                Intent myIntenet = new Intent(ActivityAfterClickDbButton.this,
-                        ActivityDatabaseView.class);
-                startActivity(myIntenet);
+                startDatabaseView();
             }
         });
+    }
+
+    private void startDatabaseView() {
+        Intent myIntenet = new Intent(ActivityAfterClickDbButton.this,
+                ActivityDatabaseView.class);
+        startActivity(myIntenet);
     }
 }

@@ -1,5 +1,6 @@
 package example.com.vocabularylearningapp.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
     ObjectWord objectWord = ActivityFirstTranslationWord.objectWord;
     int assignmentNumberOfWord;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,24 +52,7 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
                 context = v.getContext();
 
                 assignmentNumberOfWord = 1;
-                boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumberOfWord);
-
-                if (transferToOtherDatabase) {
-                    ActivityFirstTranslationWord.currentNumberOfWordCounter++;
-                    Toast.makeText(context, "Word record was transfered to new databse.", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(context, "Unable to transfer word record.", Toast.LENGTH_SHORT).show();
-                }
-
-                if (ActivityFirstTranslationWord.currentNumberOfWordCounter > ActivityAfterClickStartButton.numberOfWordsInTheSet) {
-                    Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
-                            MainActivity.class);
-                    startActivity(myIntenet);
-                } else {
-                    Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
-                            ActivityFirstTranslationWord.class);
-                    startActivity(myIntenet);
-                }
+                transferToOtherDatabase();
 
             }
         });
@@ -79,25 +64,29 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
                 context = v.getContext();
 
                 assignmentNumberOfWord = 2;
-                boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumberOfWord);
-
-                if (transferToOtherDatabase) {
-                    ActivityFirstTranslationWord.currentNumberOfWordCounter++;
-                    Toast.makeText(context, "Word record was transfered to new databse.", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(context, "Unable to transfer word record.", Toast.LENGTH_SHORT).show();
-                }
-
-                if (ActivityFirstTranslationWord.currentNumberOfWordCounter > ActivityAfterClickStartButton.numberOfWordsInTheSet) {
-                    Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
-                            MainActivity.class);
-                    startActivity(myIntenet);
-                } else {
-                    Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
-                            ActivityFirstTranslationWord.class);
-                    startActivity(myIntenet);
-                }
+                transferToOtherDatabase();
             }
         });
+    }
+
+    private void transferToOtherDatabase() {
+        boolean transferToOtherDatabase = new TableControllerWord(context).updateByChangeAssignmentNumber(objectWord, assignmentNumberOfWord);
+
+        if (transferToOtherDatabase) {
+            ActivityFirstTranslationWord.currentNumberOfWordCounter++;
+            Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Unable to transfer the word", Toast.LENGTH_SHORT).show();
+        }
+
+        if (ActivityFirstTranslationWord.currentNumberOfWordCounter > ActivityAfterClickStartButton.numberOfWordsInTheSet) {
+            Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
+                    MainActivity.class);
+            startActivity(myIntenet);
+        } else {
+            Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
+                    ActivityFirstTranslationWord.class);
+            startActivity(myIntenet);
+        }
     }
 }
