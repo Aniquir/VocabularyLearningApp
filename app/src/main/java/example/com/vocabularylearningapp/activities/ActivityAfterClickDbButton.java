@@ -32,7 +32,6 @@ public class ActivityAfterClickDbButton extends AppCompatActivity {
         newWordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 numNeededToDisplayCorrectDb = 0;
                 startDatabaseView();
             }

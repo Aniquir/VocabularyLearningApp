@@ -37,11 +37,11 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
             }
         });
 
-        TextView textView = findViewById(R.id.textViewSecondTranslation);
-        textView.setText(ActivityFirstTranslationWord.objectWordSecondTranslation);
+        TextView textViewSecTranslation = findViewById(R.id.textViewSecondTranslation);
+        textViewSecTranslation.setText(ActivityFirstTranslationWord.objectWordSecondTranslation);
 
-        TextView textView1 = findViewById(R.id.counterOfLearningWordsTextViewSecondTranslation);
-        textView1.setText(ActivityFirstTranslationWord.currentNumberOfWordCounter
+        TextView countOfLearWordSecTranslation = findViewById(R.id.counterOfLearningWordsTextViewSecondTranslation);
+        countOfLearWordSecTranslation.setText(ActivityFirstTranslationWord.currentNumberOfWordCounter
                 + " / "
                 + ActivityAfterClickStartButton.numberOfWordsInTheSet);
 
@@ -50,10 +50,8 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 context = v.getContext();
-
                 assignmentNumberOfWord = 1;
                 transferToOtherDatabase();
-
             }
         });
 
@@ -62,7 +60,6 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 context = v.getContext();
-
                 assignmentNumberOfWord = 2;
                 transferToOtherDatabase();
             }
@@ -81,7 +78,7 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
 
         if (ActivityFirstTranslationWord.currentNumberOfWordCounter > ActivityAfterClickStartButton.numberOfWordsInTheSet) {
             Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
-                    MainActivity.class);
+                    ActivityAfterClickStartButton.class);
             startActivity(myIntenet);
         } else {
             Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,

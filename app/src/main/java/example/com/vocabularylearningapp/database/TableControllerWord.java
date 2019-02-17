@@ -69,7 +69,6 @@ public class TableControllerWord extends AppDatabaseHandler{
                 recordList.add(objectWord);
             } while (cursor.moveToNext());
         }
-
         cursor.close();
         db.close();
 
@@ -157,8 +156,7 @@ public class TableControllerWord extends AppDatabaseHandler{
         Cursor mCursor = db.rawQuery("SELECT * FROM " + "words", null);
         Boolean rowExists = true;
 
-        if (mCursor.moveToFirst())
-        {
+        if (mCursor.moveToFirst()){
             rowExists = false;
         }
         return rowExists;

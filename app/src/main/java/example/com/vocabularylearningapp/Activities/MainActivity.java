@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                 String[] tokens = line.split(";");
 
                 ObjectWord objectWord = new ObjectWord();
-
                 objectWord.setFirstTranslation(tokens[0]);
                 objectWord.setSecondTranslation(tokens[1]);
 

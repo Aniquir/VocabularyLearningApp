@@ -65,7 +65,6 @@ public class ActivityDatabaseView extends AppCompatActivity {
                 int id = word.getId();
                 String firstTranslation = word.getFirstTranslation();
                 String secondTranslation = word.getSecondTranslation();
-
                 String textViewContents = firstTranslation + " - " + secondTranslation;
 
                 TextView textViewWordItem = new TextView(this);

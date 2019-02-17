@@ -21,7 +21,6 @@ public class AppDatabaseHandler extends SQLiteOpenHelper {
                 "firstTranslation TEXT, " +
                 "secondTranslation TEXT, " +
                 "assignmentNumber INTEGER) ";
-
         db.execSQL(sql);
     }
 
