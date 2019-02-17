@@ -16,7 +16,7 @@
         android:layout_marginBottom="48dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
-        android:src="@android:drawable/ic_menu_view"
+        android:src="@drawable/eye_pika_border"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,10 +26,10 @@
         android:id="@+id/counterOfLearningWordsTextViewFirstTranslation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageViewFirstTranslation"
         android:layout_alignTop="@+id/imageButtonBackToMainMenu"
-        android:layout_marginEnd="16dp"
+        android:layout_alignEnd="@+id/imageViewFirstTranslation"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/_0_0"
         android:textColor="@android:color/darker_gray"
         android:textSize="24sp"
@@ -45,7 +45,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:background="#895c78de"
+        android:background="@drawable/rounded_corners_of_home_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
@@ -59,7 +59,7 @@
         android:layout_marginTop="112dp"
         android:alpha="0.5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/white" />
@@ -79,4 +79,25 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toEndOf="@+id/imageViewFirstTranslation"
         app:layout_constraintTop_toTopOf="@+id/imageViewFirstTranslation" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="49dp"
+        android:src="@drawable/eye_pika"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
 </android.support.constraint.ConstraintLayout>
