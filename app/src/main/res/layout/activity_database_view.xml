@@ -11,10 +11,10 @@
         android:id="@+id/counterOfWordsInDatabase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="10dp"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
         android:text="@string/_0_records_found"
         android:textColor="@android:color/darker_gray"
         android:textSize="24sp"
@@ -27,12 +27,12 @@
         android:layout_width="match_parent"
         android:layout_height="511dp"
         android:layout_alignBottom="@+id/counterOfWordsInDatabase"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="2dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="2dp"
         android:layout_marginTop="60dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,6 +57,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="400dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="100dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/darker_gray" />
 
 
 </android.support.constraint.ConstraintLayout>
