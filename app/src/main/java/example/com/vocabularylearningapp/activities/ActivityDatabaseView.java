@@ -40,6 +40,16 @@ public class ActivityDatabaseView extends AppCompatActivity {
                 finish();
             }
         });
+
+        ImageButton backToPreviousActivityButton = findViewById(R.id.imageButtonBackToPreviousActivity);
+        backToPreviousActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(ActivityDatabaseView.this, ActivityAfterClickDbButton.class);
+                startActivity(myIntent);
+                finish();
+            }
+        });
     }
 
     @SuppressLint("SetTextI18n")
