@@ -72,7 +72,7 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
 
         if (transferToOtherDatabase) {
             ActivityFirstTranslationWord.currentNumberOfWordCounter++;
-            Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "As you wish my Lord", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(context, "Unable to transfer the word", Toast.LENGTH_SHORT).show();
         }
