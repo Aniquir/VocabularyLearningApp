@@ -36,6 +36,7 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
                 Intent myIntenet = new Intent(ActivityFirstTranslationWord.this,
                         MainActivity.class);
                 startActivity(myIntenet);
+                finish();
             }
         });
 
@@ -53,6 +54,7 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
                 Intent myIntenet = new Intent(ActivityFirstTranslationWord.this,
                         ActivitySecondTranslationWord.class);
                 startActivity(myIntenet);
+                finish();
             }
         });
     }

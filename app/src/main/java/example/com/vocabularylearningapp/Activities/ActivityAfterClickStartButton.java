@@ -26,6 +26,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
                 Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
                         MainActivity.class);
                 startActivity(myIntenet);
+                finish();
             }
         });
 
@@ -64,5 +65,6 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
         Intent myIntenet = new Intent(ActivityAfterClickStartButton.this,
                 ActivityFirstTranslationWord.class);
         startActivity(myIntenet);
+        finish();
     }
 }

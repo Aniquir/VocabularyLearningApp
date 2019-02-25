@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(MainActivity.this,
                         ActivityAfterClickStartButton.class);
                 startActivity(myIntent);
+                finish();
             }
         });
 
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent myIntenet2 = new Intent(MainActivity.this,
                         ActivityAfterClickDbButton.class);
                 startActivity(myIntenet2);
+                finish();
             }
         });
     }

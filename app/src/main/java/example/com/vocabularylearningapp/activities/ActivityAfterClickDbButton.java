@@ -25,6 +25,7 @@ public class ActivityAfterClickDbButton extends AppCompatActivity {
                 Intent myIntenet = new Intent(ActivityAfterClickDbButton.this,
                         MainActivity.class);
                 startActivity(myIntenet);
+                finish();
             }
         });
 
@@ -60,5 +61,6 @@ public class ActivityAfterClickDbButton extends AppCompatActivity {
         Intent myIntenet = new Intent(ActivityAfterClickDbButton.this,
                 ActivityDatabaseView.class);
         startActivity(myIntenet);
+        finish();
     }
 }

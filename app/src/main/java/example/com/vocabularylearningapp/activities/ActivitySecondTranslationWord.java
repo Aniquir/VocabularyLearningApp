@@ -34,6 +34,7 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
                 Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
                         MainActivity.class);
                 startActivity(myIntenet);
+                finish();
             }
         });
 
@@ -80,10 +81,12 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
             Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
                     ActivityAfterClickStartButton.class);
             startActivity(myIntenet);
+            finish();
         } else {
             Intent myIntenet = new Intent(ActivitySecondTranslationWord.this,
                     ActivityFirstTranslationWord.class);
             startActivity(myIntenet);
+            finish();
         }
     }
 }

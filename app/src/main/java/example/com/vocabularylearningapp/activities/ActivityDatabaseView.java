@@ -37,6 +37,7 @@ public class ActivityDatabaseView extends AppCompatActivity {
                 Intent myIntenet = new Intent(ActivityDatabaseView.this,
                         MainActivity.class);
                 startActivity(myIntenet);
+                finish();
             }
         });
     }
