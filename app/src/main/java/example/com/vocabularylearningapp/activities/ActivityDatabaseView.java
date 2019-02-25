@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import example.com.vocabularylearningapp.R;
@@ -61,6 +63,8 @@ public class ActivityDatabaseView extends AppCompatActivity {
 
         if (words.size() > 0) {
 
+            sortListAlphabetically(words);
+
             for (ObjectWord word : words) {
                 int id = word.getId();
                 String firstTranslation = word.getFirstTranslation();
@@ -91,5 +95,14 @@ public class ActivityDatabaseView extends AppCompatActivity {
 
             linearLayoutRecords.addView(locationItem);
         }
+    }
+
+    private void sortListAlphabetically(List<ObjectWord> words) {
+        Collections.sort(words, new Comparator<ObjectWord>() {
+            @Override
+            public int compare(ObjectWord o1, ObjectWord o2) {
+                return o1.getFirstTranslation().compareToIgnoreCase(o2.getFirstTranslation());
+            }
+        });
     }
 }
