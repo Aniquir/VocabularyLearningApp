@@ -40,6 +40,10 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 10;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 0;
+                int currentNumberOfSelectedWords = counterOfSelectedWords(0);
+                if (counterOfSelectedWords(0) < 10){
+                    numberOfWordsInTheSet = currentNumberOfSelectedWords;
+                }
                 startFirstTranslationWordView();
             }
         });
@@ -50,6 +54,10 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 1;
+                int currentNumberOfSelectedWords = counterOfSelectedWords(1);
+                if (counterOfSelectedWords(1) < 5){
+                    numberOfWordsInTheSet = currentNumberOfSelectedWords;
+                }
                 startFirstTranslationWordView();
             }
         });
@@ -60,6 +68,10 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 2;
+                int currentNumberOfSelectedWords = counterOfSelectedWords(2);
+                if (counterOfSelectedWords(2) < 5){
+                    numberOfWordsInTheSet = currentNumberOfSelectedWords;
+                }
                 startFirstTranslationWordView();
             }
         });
