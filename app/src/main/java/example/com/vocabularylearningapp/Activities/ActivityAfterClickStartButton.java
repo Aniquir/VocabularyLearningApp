@@ -7,7 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import java.util.List;
+
 import example.com.vocabularylearningapp.R;
+import example.com.vocabularylearningapp.database.TableControllerWord;
+import example.com.vocabularylearningapp.entity.ObjectWord;
 
 public class ActivityAfterClickStartButton extends AppCompatActivity {
 
@@ -66,5 +70,14 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
                 ActivityFirstTranslationWord.class);
         startActivity(myIntenet);
         finish();
+    }
+
+    public int counterOfSelectedWords(int markWordInDb){
+        List<ObjectWord> words = new TableControllerWord(this).read(markWordInDb);
+        int counter = 0;
+        for (int i = 0; i < words.size(); i++) {
+            counter++;
+        }
+        return counter;
     }
 }
