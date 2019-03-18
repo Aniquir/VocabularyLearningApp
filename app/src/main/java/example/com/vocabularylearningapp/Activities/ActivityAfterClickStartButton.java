@@ -12,6 +12,7 @@ import java.util.List;
 import example.com.vocabularylearningapp.R;
 import example.com.vocabularylearningapp.database.TableControllerWord;
 import example.com.vocabularylearningapp.entity.ObjectWord;
+import example.com.vocabularylearningapp.helpers.WordCounter;
 
 public class ActivityAfterClickStartButton extends AppCompatActivity {
 
@@ -40,8 +41,8 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 10;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 0;
-                int currentNumberOfSelectedWords = counterOfSelectedWords(0);
-                if (counterOfSelectedWords(0) < 10){
+                int currentNumberOfSelectedWords = getNumberOfSelectedWords(0);
+                if (getNumberOfSelectedWords(0) < 10) {
                     numberOfWordsInTheSet = currentNumberOfSelectedWords;
                 }
                 startFirstTranslationWordView();
@@ -54,8 +55,8 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 1;
-                int currentNumberOfSelectedWords = counterOfSelectedWords(1);
-                if (counterOfSelectedWords(1) < 5){
+                int currentNumberOfSelectedWords = getNumberOfSelectedWords(1);
+                if (getNumberOfSelectedWords(1) < 5) {
                     numberOfWordsInTheSet = currentNumberOfSelectedWords;
                 }
                 startFirstTranslationWordView();
@@ -68,8 +69,8 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 2;
-                int currentNumberOfSelectedWords = counterOfSelectedWords(2);
-                if (counterOfSelectedWords(2) < 5){
+                int currentNumberOfSelectedWords = getNumberOfSelectedWords(2);
+                if (getNumberOfSelectedWords(2) < 5) {
                     numberOfWordsInTheSet = currentNumberOfSelectedWords;
                 }
                 startFirstTranslationWordView();
@@ -84,12 +85,9 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
         finish();
     }
 
-    public int counterOfSelectedWords(int markWordInDb){
+    public int getNumberOfSelectedWords(int markWordInDb) {
         List<ObjectWord> words = new TableControllerWord(this).read(markWordInDb);
-        int counter = 0;
-        for (int i = 0; i < words.size(); i++) {
-            counter++;
-        }
-        return counter;
+        WordCounter wordCounter = new WordCounter();
+        return wordCounter.counterOfSelectedWords(words);
     }
 }
