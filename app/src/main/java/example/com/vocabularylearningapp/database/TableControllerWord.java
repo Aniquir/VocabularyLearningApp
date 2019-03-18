@@ -75,6 +75,38 @@ public class TableControllerWord extends AppDatabaseHandler{
         return recordList;
     }
 
+    public List<ObjectWord> readAll(){
+
+        List<ObjectWord> recordList = new ArrayList<>();
+
+        String sql = "SELECT * FROM words";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+
+        if (cursor.moveToFirst()){
+            do {
+
+                int id = Integer.parseInt(cursor.getString(cursor.getColumnIndex("id")));
+                String firstTranslation = cursor.getString(cursor.getColumnIndex("firstTranslation"));
+                String secondTranslation = cursor.getString(cursor.getColumnIndex("secondTranslation"));
+                int assignmentNumber = Integer.parseInt(cursor.getString(cursor.getColumnIndex("assignmentNumber")));
+
+                ObjectWord objectWord = new ObjectWord();
+                objectWord.setId(id);
+                objectWord.setFirstTranslation(firstTranslation);
+                objectWord.setSecondTranslation(secondTranslation);
+                objectWord.setAssignmentNumber(assignmentNumber);
+
+                recordList.add(objectWord);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        return recordList;
+    }
+
     public ObjectWord readSingleRecord(int wordId){
 
         ObjectWord objectWord = null;
