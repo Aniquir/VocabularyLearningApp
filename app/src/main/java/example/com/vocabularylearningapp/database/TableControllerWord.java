@@ -79,7 +79,7 @@ public class TableControllerWord extends AppDatabaseHandler{
 
         List<ObjectWord> recordList = new ArrayList<>();
 
-        String sql = "SELECT * FROM words";
+        String sql = "SELECT * FROM words WHERE assignmentNumber IN (0, 1, 2, 3, 4)";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(sql, null);
