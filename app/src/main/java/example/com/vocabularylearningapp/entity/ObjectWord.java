@@ -59,8 +59,10 @@ public class ObjectWord {
     }
 
     public int getAssignmentNumber() {
-        assignmentNumber = 0;
         return assignmentNumber;
+    }
+    public int getAssignmentNumberWhenCreateNewObjectWord(){
+        return 0;
     }
 
     public void setAssignmentNumber(int assignmentNumber) {

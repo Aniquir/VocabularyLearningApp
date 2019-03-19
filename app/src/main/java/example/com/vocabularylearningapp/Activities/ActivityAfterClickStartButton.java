@@ -7,7 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import java.util.List;
+
 import example.com.vocabularylearningapp.R;
+import example.com.vocabularylearningapp.database.TableControllerWord;
+import example.com.vocabularylearningapp.entity.ObjectWord;
+import example.com.vocabularylearningapp.helpers.AssignmentNumberCorrector;
+import example.com.vocabularylearningapp.helpers.WordCounter;
 
 public class ActivityAfterClickStartButton extends AppCompatActivity {
 
@@ -18,6 +24,8 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_click_start_button);
         ActivityFirstTranslationWord.currentNumberOfWordCounter = 1;
+
+        updateToCorrectAssignmentNumbersOfWords();
 
         ImageButton backToMainMenuButton = findViewById(R.id.imageButtonBackToMainMenu);
         backToMainMenuButton.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +44,10 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 10;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 0;
+                int currentNumberOfSelectedWords = getNumberOfSelectedWords(0);
+                if (getNumberOfSelectedWords(0) < 10) {
+                    numberOfWordsInTheSet = currentNumberOfSelectedWords;
+                }
                 startFirstTranslationWordView();
             }
         });
@@ -46,6 +58,10 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 1;
+                int currentNumberOfSelectedWords = getNumberOfSelectedWords(1);
+                if (getNumberOfSelectedWords(1) < 5) {
+                    numberOfWordsInTheSet = currentNumberOfSelectedWords;
+                }
                 startFirstTranslationWordView();
             }
         });
@@ -56,6 +72,10 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 2;
+                int currentNumberOfSelectedWords = getNumberOfSelectedWords(2);
+                if (getNumberOfSelectedWords(2) < 5) {
+                    numberOfWordsInTheSet = currentNumberOfSelectedWords;
+                }
                 startFirstTranslationWordView();
             }
         });
@@ -66,5 +86,19 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
                 ActivityFirstTranslationWord.class);
         startActivity(myIntenet);
         finish();
+    }
+
+    public int getNumberOfSelectedWords(int markWordInDb) {
+        List<ObjectWord> words = new TableControllerWord(this).read(markWordInDb);
+        WordCounter wordCounter = new WordCounter();
+        return wordCounter.counterOfSelectedWords(words);
+    }
+
+    public void updateToCorrectAssignmentNumbersOfWords(){
+        TableControllerWord tableControllerWord = new TableControllerWord(getApplicationContext());
+        List<ObjectWord> wordsToUpdate = new TableControllerWord(getApplicationContext()).readAll();
+        AssignmentNumberCorrector assignmentNumberCorrector = new AssignmentNumberCorrector();
+
+        assignmentNumberCorrector.updateToCorrectAssignmentNumbersOfWords(tableControllerWord, wordsToUpdate);
     }
 }

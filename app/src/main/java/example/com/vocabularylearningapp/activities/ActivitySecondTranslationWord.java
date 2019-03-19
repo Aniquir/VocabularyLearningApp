@@ -51,7 +51,7 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 context = v.getContext();
-                assignmentNumberOfWord = 1;
+                assignmentNumberOfWord = 3;
                 transferToOtherDatabase();
             }
         });
@@ -61,7 +61,7 @@ public class ActivitySecondTranslationWord extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 context = v.getContext();
-                assignmentNumberOfWord = 2;
+                assignmentNumberOfWord = 4;
                 transferToOtherDatabase();
             }
         });
