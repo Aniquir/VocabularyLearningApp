@@ -70,7 +70,7 @@ public class ActivityDatabaseView extends AppCompatActivity {
         LinearLayout linearLayoutRecords = findViewById(R.id.linearLayoutRecords);
         linearLayoutRecords.removeAllViews();
 
-        List<ObjectWord> words = new TableControllerWord(this).read(numNeededToDisplayCorrectDb);
+        List<ObjectWord> words = new TableControllerWord(this).readWithAssignmentNumber(numNeededToDisplayCorrectDb);
 
         if (words.size() > 0) {
 

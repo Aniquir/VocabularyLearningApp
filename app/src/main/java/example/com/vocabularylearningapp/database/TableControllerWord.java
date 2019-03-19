@@ -43,7 +43,7 @@ public class TableControllerWord extends AppDatabaseHandler{
         return recordCount;
     }
 
-    public List<ObjectWord> read(int numNeededToDisplayCorrectDb){
+    public List<ObjectWord> readWithAssignmentNumber(int numNeededToDisplayCorrectDb){
 
         List<ObjectWord> recordList = new ArrayList<>();
 

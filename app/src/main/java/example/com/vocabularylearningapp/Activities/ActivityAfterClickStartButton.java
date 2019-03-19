@@ -89,7 +89,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
     }
 
     public int getNumberOfSelectedWords(int markWordInDb) {
-        List<ObjectWord> words = new TableControllerWord(this).read(markWordInDb);
+        List<ObjectWord> words = new TableControllerWord(this).readWithAssignmentNumber(markWordInDb);
         WordCounter wordCounter = new WordCounter();
         return wordCounter.counterOfSelectedWords(words);
     }

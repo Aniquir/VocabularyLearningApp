@@ -75,7 +75,7 @@ public class ActivityFirstTranslationWord extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void readFirstAndSecondTranslation(int numNeededToDisplayCorrectDb) {
         TextView textViewFirstTranslation = findViewById(R.id.textViewFirstTranslation);
-        List<ObjectWord> words = new TableControllerWord(this).read(numNeededToDisplayCorrectDb);
+        List<ObjectWord> words = new TableControllerWord(this).readWithAssignmentNumber(numNeededToDisplayCorrectDb);
 
         if (words.size() > 0) {
             ArrayList<Integer> ids = new ArrayList<>();
