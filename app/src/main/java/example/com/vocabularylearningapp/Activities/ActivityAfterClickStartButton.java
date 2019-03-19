@@ -12,6 +12,7 @@ import java.util.List;
 import example.com.vocabularylearningapp.R;
 import example.com.vocabularylearningapp.database.TableControllerWord;
 import example.com.vocabularylearningapp.entity.ObjectWord;
+import example.com.vocabularylearningapp.helpers.AssignmentNumberCorrector;
 import example.com.vocabularylearningapp.helpers.WordCounter;
 
 public class ActivityAfterClickStartButton extends AppCompatActivity {
@@ -23,6 +24,8 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_click_start_button);
         ActivityFirstTranslationWord.currentNumberOfWordCounter = 1;
+
+        updateToCorrectAssignmentNumbersOfWords();
 
         ImageButton backToMainMenuButton = findViewById(R.id.imageButtonBackToMainMenu);
         backToMainMenuButton.setOnClickListener(new View.OnClickListener() {
@@ -89,5 +92,13 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
         List<ObjectWord> words = new TableControllerWord(this).read(markWordInDb);
         WordCounter wordCounter = new WordCounter();
         return wordCounter.counterOfSelectedWords(words);
+    }
+
+    public void updateToCorrectAssignmentNumbersOfWords(){
+        TableControllerWord tableControllerWord = new TableControllerWord(getApplicationContext());
+        List<ObjectWord> wordsToUpdate = new TableControllerWord(getApplicationContext()).readAll();
+        AssignmentNumberCorrector assignmentNumberCorrector = new AssignmentNumberCorrector();
+
+        assignmentNumberCorrector.updateToCorrectAssignmentNumbersOfWords(tableControllerWord, wordsToUpdate);
     }
 }
