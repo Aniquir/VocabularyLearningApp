@@ -22,7 +22,7 @@ public class TableControllerWord extends AppDatabaseHandler{
 
         values.put("firstTranslation", objectWord.getFirstTranslation());
         values.put("secondTranslation", objectWord.getSecondTranslation());
-        values.put("assignmentNumber", objectWord.getAssignmentNumber());
+        values.put("assignmentNumber", objectWord.getAssignmentNumberWhenCreateNewObjectWord());
 
         SQLiteDatabase db = this.getWritableDatabase();
 
