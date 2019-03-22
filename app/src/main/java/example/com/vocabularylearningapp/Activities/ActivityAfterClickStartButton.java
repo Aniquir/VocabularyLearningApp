@@ -13,6 +13,7 @@ import example.com.vocabularylearningapp.R;
 import example.com.vocabularylearningapp.database.TableControllerWord;
 import example.com.vocabularylearningapp.entity.ObjectWord;
 import example.com.vocabularylearningapp.helpers.AssignmentNumberCorrector;
+import example.com.vocabularylearningapp.helpers.ButtonEnable;
 import example.com.vocabularylearningapp.helpers.WordCounter;
 
 public class ActivityAfterClickStartButton extends AppCompatActivity {
@@ -106,9 +107,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
     }
 
     public void disableButtonIfNoWords(Button button, int numberOfWords){
-        if (numberOfWords < 1){
-            button.setEnabled(false);
-            button.getBackground().setAlpha(64);
-        }
+        ButtonEnable buttonEnable = new ButtonEnable();
+        buttonEnable.disableButtonIfNoWords(button, numberOfWords);
     }
 }
