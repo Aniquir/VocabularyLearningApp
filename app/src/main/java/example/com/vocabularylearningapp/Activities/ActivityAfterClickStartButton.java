@@ -39,42 +39,45 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
         });
 
         Button newWordButton = findViewById(R.id.start1NewWords);
+        final int currentNumberOfNewWords = getNumberOfSelectedWords(0);
+        disableButtonIfNoWords(newWordButton, currentNumberOfNewWords);
         newWordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numberOfWordsInTheSet = 10;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 0;
-                int currentNumberOfSelectedWords = getNumberOfSelectedWords(0);
                 if (getNumberOfSelectedWords(0) < 10) {
-                    numberOfWordsInTheSet = currentNumberOfSelectedWords;
+                    numberOfWordsInTheSet = currentNumberOfNewWords;
                 }
                 startFirstTranslationWordView();
             }
         });
 
-        Button repeatWordButton = findViewById(R.id.start1RepeatWords);
+        final Button repeatWordButton = findViewById(R.id.start1RepeatWords);
+        final int currentNumberOfRepeatWords = getNumberOfSelectedWords(1);
+        disableButtonIfNoWords(repeatWordButton, currentNumberOfRepeatWords);
         repeatWordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 1;
-                int currentNumberOfSelectedWords = getNumberOfSelectedWords(1);
                 if (getNumberOfSelectedWords(1) < 5) {
-                    numberOfWordsInTheSet = currentNumberOfSelectedWords;
+                    numberOfWordsInTheSet = currentNumberOfRepeatWords;
                 }
                 startFirstTranslationWordView();
             }
         });
 
         Button knownWordButton = findViewById(R.id.start1KnownWords);
+        final int currentNumberOfKnownWords = getNumberOfSelectedWords(2);
+        disableButtonIfNoWords(knownWordButton, currentNumberOfKnownWords);
         knownWordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numberOfWordsInTheSet = 5;
                 ActivityAfterClickDbButton.numNeededToDisplayCorrectDb = 2;
-                int currentNumberOfSelectedWords = getNumberOfSelectedWords(2);
                 if (getNumberOfSelectedWords(2) < 5) {
-                    numberOfWordsInTheSet = currentNumberOfSelectedWords;
+                    numberOfWordsInTheSet = currentNumberOfKnownWords;
                 }
                 startFirstTranslationWordView();
             }
