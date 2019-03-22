@@ -101,4 +101,10 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
 
         assignmentNumberCorrector.updateToCorrectAssignmentNumbersOfWords(tableControllerWord, wordsToUpdate);
     }
+
+    public void disableButtonIfNoWords(Button button, int numberOfWords){
+        if (numberOfWords < 1){
+            button.setEnabled(false);
+        }
+    }
 }
