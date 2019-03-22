@@ -108,6 +108,7 @@ public class ActivityAfterClickStartButton extends AppCompatActivity {
     public void disableButtonIfNoWords(Button button, int numberOfWords){
         if (numberOfWords < 1){
             button.setEnabled(false);
+            button.getBackground().setAlpha(64);
         }
     }
 }
