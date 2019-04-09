@@ -52,14 +52,16 @@
 
     <ImageView
         android:id="@+id/imageViewFirstTranslation"
-        android:layout_width="380dp"
+        android:layout_width="0dp"
         android:layout_height="160dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginBottom="8dp"
         android:alpha="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/gifImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/white" />
@@ -70,17 +72,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
         android:text="@string/first_translationSmallLetters"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewFirstTranslation"
         app:layout_constraintEnd_toStartOf="@+id/imageViewFirstTranslation"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageViewFirstTranslation"
-        app:layout_constraintTop_toTopOf="@+id/imageViewFirstTranslation" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFirstTranslation" />
 
     <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
@@ -92,12 +95,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
 
 </android.support.constraint.ConstraintLayout>
