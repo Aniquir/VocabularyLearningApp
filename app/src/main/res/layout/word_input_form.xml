@@ -10,7 +10,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:hint="@string/first_translation"
-        android:singleLine="true" >
+        android:singleLine="true"
+        android:textColor="@color/colorAccent">
 
         <requestFocus />
     </EditText>
@@ -19,9 +20,10 @@
         android:id="@+id/editTextWordSecondTranslation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/editTextWordFirstTranslation"
+        android:layout_alignParentStart="true"
         android:hint="@string/second_translation"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:textColor="@color/colorAccent" />
 
 </RelativeLayout>
