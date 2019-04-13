@@ -41,11 +41,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button buttonAddWord = findViewById(R.id.addWordButton);
-//        buttonAddWord.setOnClickListener(new OnClickListenerNewWordButton());
-
-        //nowy fragment
         buttonAddWord.setOnClickListener(new OnClickListenerInputNewWordFragment());
-        //koniec fragmentu
+
         Button buttonDb = findViewById(R.id.dbButton);
         buttonDb.setOnClickListener(new View.OnClickListener() {
             @Override
