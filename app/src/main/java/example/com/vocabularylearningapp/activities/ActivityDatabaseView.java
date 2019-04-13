@@ -18,7 +18,7 @@ import java.util.List;
 import example.com.vocabularylearningapp.R;
 import example.com.vocabularylearningapp.database.TableControllerWord;
 import example.com.vocabularylearningapp.entity.ObjectWord;
-import example.com.vocabularylearningapp.onClickListeners.OnLongClickListenerWordRecord;
+import example.com.vocabularylearningapp.onClickListeners.OnLongClickListenerWordRecordFragment;
 
 
 public class ActivityDatabaseView extends AppCompatActivity {
@@ -90,7 +90,7 @@ public class ActivityDatabaseView extends AppCompatActivity {
                 textViewWordItem.setTextColor(this.getResources().getColor(R.color.halfTransparentBlue));
                 textViewWordItem.setText(textViewContents);
                 textViewWordItem.setTag(Integer.toString(id));
-                textViewWordItem.setOnLongClickListener(new OnLongClickListenerWordRecord());
+                textViewWordItem.setOnLongClickListener(new OnLongClickListenerWordRecordFragment());
 
                 linearLayoutRecords.addView(textViewWordItem);
             }
