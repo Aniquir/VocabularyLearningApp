@@ -16,26 +16,6 @@ import example.com.vocabularylearningapp.entity.ObjectWord;
 
 public class OnClickListenerInputNewWordFragment extends Fragment implements View.OnClickListener {
 
-//    @Override
-//    public View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
-//        View myView = inflater.inflate(R.layout.fragment_1, container, false);
-//        myButton = (Button) myView.findViewById(R.id.myButton);
-//        myButton.setOnClickListener(this);
-//        return myView;
-//    }
-
-
-//    Button myButton = ;
-//
-//    @Nullable
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-//        View myView = inflater.inflate(R.layout.fragment_word_input_form, container, false);
-//        myButton = myView.findViewById(R.id.)
-//        myButton.setOnClickListener(this);
-//        return myView;
-//    }
-
     @Override
     public void onClick(View view) {
         final Context context = view.getContext();
