@@ -15,7 +15,7 @@ import java.nio.charset.Charset;
 import example.com.vocabularylearningapp.R;
 import example.com.vocabularylearningapp.database.TableControllerWord;
 import example.com.vocabularylearningapp.entity.ObjectWord;
-import example.com.vocabularylearningapp.onClickListeners.OnClickListenerNewWordButton;
+import example.com.vocabularylearningapp.onClickListeners.OnClickListenerInputNewWordFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button buttonAddWord = findViewById(R.id.addWordButton);
-        buttonAddWord.setOnClickListener(new OnClickListenerNewWordButton());
+        buttonAddWord.setOnClickListener(new OnClickListenerInputNewWordFragment());
 
         Button buttonDb = findViewById(R.id.dbButton);
         buttonDb.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,7 @@
 package example.com.vocabularylearningapp.onClickListeners;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
@@ -14,7 +15,7 @@ import example.com.vocabularylearningapp.activities.ActivityDatabaseView;
 import example.com.vocabularylearningapp.database.TableControllerWord;
 import example.com.vocabularylearningapp.entity.ObjectWord;
 
-public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
+public class OnLongClickListenerWordRecordFragment extends Fragment implements View.OnLongClickListener {
 
     Context context;
     String id;
@@ -60,7 +61,7 @@ public class OnLongClickListenerWordRecord implements View.OnLongClickListener {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         assert inflater != null;
-        final View formElementsView = inflater.inflate(R.layout.word_input_form, null, false);
+        final View formElementsView = inflater.inflate(R.layout.fragment_word_input_form, null, false);
 
         final EditText editTextWordFirstTranslation = formElementsView.findViewById(R.id.editTextWordFirstTranslation);
         final EditText editTextWordSecondTranslation = formElementsView.findViewById(R.id.editTextWordSecondTranslation);
